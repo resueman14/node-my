@@ -1,4 +1,5 @@
 const express = require('express')
+const fileUpload = require('express-fileupload')
 const Handlebars = require('handlebars')
 const exphbs = require('express-handlebars')
 const path = require('path')
@@ -12,7 +13,7 @@ const hbs = exphbs.create({
   handlebars: allowInsecurePrototypeAccess(Handlebars)
 })
 
-
+app.use(fileUpload())
 app.engine('hbs', hbs.engine)
 app.set('view engine', 'hbs')
 app.set('views','views')
