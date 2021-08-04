@@ -2,3 +2,13 @@
   <input type="file" name="upfile">
   <input type="submit" value="Upload!">
 </form>
+
+{{#if filenames.length}}
+  {{#each filenames}}
+    <div>
+      <a href="/get/{{name}}" target="_blank">{{name}}</a>
+      <a href="/remove/{{name}}" target="_blank">delete</a> 
+    </div>
+  {{/each}}
+{{else}}
+{{/if}}
